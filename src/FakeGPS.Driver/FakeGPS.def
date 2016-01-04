@@ -1,0 +1,10 @@
+; FakeGPS.def : Declares the module parameters.
+
+LIBRARY FakeGPS.dll
+
+EXPORTS
+        DllCanUnloadNow         PRIVATE
+        DllGetClassObject       PRIVATE
+        DllRegisterServer       PRIVATE
+        DllUnregisterServer     PRIVATE
+

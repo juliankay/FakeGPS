@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{7412E979-D9E9-42F6-BAAF-90F7A4D67A5F}</ProjectGuid>
+    <RootNamespace>$(MSBuildProjectName)</RootNamespace>
+    <UMDF_VERSION_MAJOR>1</UMDF_VERSION_MAJOR>
+    <Configuration Condition="'$(Configuration)' == ''">Win8.1 Debug</Configuration>
+    <Platform Condition="'$(Platform)' == ''">Win32</Platform>
+    <SampleGuid>{4562112D-0C40-48D3-A465-96EE1AED55AB}</SampleGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <TargetVersion>WindowsV6.3</TargetVersion>
+    <UseDebugLibraries>False</UseDebugLibraries>
+    <DriverType>UMDF</DriverType>
+    <PlatformToolset>WindowsUserModeDriver10.0</PlatformToolset>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <TargetVersion>
+    </TargetVersion>
+    <UseDebugLibraries>True</UseDebugLibraries>
+    <DriverType>UMDF</DriverType>
+    <PlatformToolset>WindowsUserModeDriver10.0</PlatformToolset>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <DriverTargetPlatform>Desktop</DriverTargetPlatform>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <TargetVersion>
+    </TargetVersion>
+    <UseDebugLibraries>False</UseDebugLibraries>
+    <DriverType>UMDF</DriverType>
+    <PlatformToolset>WindowsUserModeDriver10.0</PlatformToolset>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <DriverTargetPlatform>Desktop</DriverTargetPlatform>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <TargetVersion>
+    </TargetVersion>
+    <UseDebugLibraries>True</UseDebugLibraries>
+    <DriverType>UMDF</DriverType>
+    <PlatformToolset>WindowsUserModeDriver10.0</PlatformToolset>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <DriverTargetPlatform>Desktop</DriverTargetPlatform>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <PropertyGroup>
+    <OutDir>$(IntDir)</OutDir>
+  </PropertyGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ItemGroup Label="WrappedTaskItems">
+    <ClCompile Include="FakeGPSModule.cpp">
+      <WppEnabled>true</WppEnabled>
+      <WppDllMacro>true</WppDllMacro>
+      <WppScanConfigurationData>Trace.h</WppScanConfigurationData>
+      <AdditionalIncludeDirectories>;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreCompiledHeaderFile>internal.h</PreCompiledHeaderFile>
+      <PreCompiledHeader>Use</PreCompiledHeader>
+      <PreCompiledHeaderOutputFile>$(IntDir)\internal.h.pch</PreCompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="Driver.cpp">
+      <WppEnabled>true</WppEnabled>
+      <WppDllMacro>true</WppDllMacro>
+      <WppScanConfigurationData>Trace.h</WppScanConfigurationData>
+      <AdditionalIncludeDirectories>;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreCompiledHeaderFile>internal.h</PreCompiledHeaderFile>
+      <PreCompiledHeader>Use</PreCompiledHeader>
+      <PreCompiledHeaderOutputFile>$(IntDir)\internal.h.pch</PreCompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="Queue.cpp">
+      <WppEnabled>true</WppEnabled>
+      <WppDllMacro>true</WppDllMacro>
+      <WppScanConfigurationData>Trace.h</WppScanConfigurationData>
+      <AdditionalIncludeDirectories>;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreCompiledHeaderFile>internal.h</PreCompiledHeaderFile>
+      <PreCompiledHeader>Use</PreCompiledHeader>
+      <PreCompiledHeaderOutputFile>$(IntDir)\internal.h.pch</PreCompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="FakeGPS.cpp">
+      <WppEnabled>true</WppEnabled>
+      <WppDllMacro>true</WppDllMacro>
+      <WppScanConfigurationData>Trace.h</WppScanConfigurationData>
+      <AdditionalIncludeDirectories>;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreCompiledHeaderFile>internal.h</PreCompiledHeaderFile>
+      <PreCompiledHeader>Use</PreCompiledHeader>
+      <PreCompiledHeaderOutputFile>$(IntDir)\internal.h.pch</PreCompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="GeolocationSensor.cpp">
+      <WppEnabled>true</WppEnabled>
+      <WppDllMacro>true</WppDllMacro>
+      <WppScanConfigurationData>Trace.h</WppScanConfigurationData>
+      <AdditionalIncludeDirectories>;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreCompiledHeaderFile>internal.h</PreCompiledHeaderFile>
+      <PreCompiledHeader>Use</PreCompiledHeader>
+      <PreCompiledHeaderOutputFile>$(IntDir)\internal.h.pch</PreCompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="SensorDDI.cpp">
+      <WppEnabled>true</WppEnabled>
+      <WppDllMacro>true</WppDllMacro>
+      <WppScanConfigurationData>Trace.h</WppScanConfigurationData>
+      <AdditionalIncludeDirectories>;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreCompiledHeaderFile>internal.h</PreCompiledHeaderFile>
+      <PreCompiledHeader>Use</PreCompiledHeader>
+      <PreCompiledHeaderOutputFile>$(IntDir)\internal.h.pch</PreCompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="SensorManager.cpp">
+      <WppEnabled>true</WppEnabled>
+      <WppDllMacro>true</WppDllMacro>
+      <WppScanConfigurationData>Trace.h</WppScanConfigurationData>
+      <AdditionalIncludeDirectories>;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreCompiledHeaderFile>internal.h</PreCompiledHeaderFile>
+      <PreCompiledHeader>Use</PreCompiledHeader>
+      <PreCompiledHeaderOutputFile>$(IntDir)\internal.h.pch</PreCompiledHeaderOutputFile>
+    </ClCompile>
+    <ClCompile Include="Sensor.cpp">
+      <WppEnabled>true</WppEnabled>
+      <WppDllMacro>true</WppDllMacro>
+      <WppScanConfigurationData>Trace.h</WppScanConfigurationData>
+      <AdditionalIncludeDirectories>;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreCompiledHeaderFile>internal.h</PreCompiledHeaderFile>
+      <PreCompiledHeader>Use</PreCompiledHeader>
+      <PreCompiledHeaderOutputFile>$(IntDir)\internal.h.pch</PreCompiledHeaderOutputFile>
+    </ClCompile>
+    <OtherWpp Include="SensorsServiceDriver.rc; SensorsServiceDriver.idl">
+      <WppEnabled>true</WppEnabled>
+      <WppDllMacro>true</WppDllMacro>
+      <WppScanConfigurationData>Trace.h</WppScanConfigurationData>
+    </OtherWpp>
+  </ItemGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <TargetName>FakeGPS</TargetName>
+    <UseOfAtl>Dynamic</UseOfAtl>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <TargetName>FakeGPS</TargetName>
+    <UseOfAtl>Dynamic</UseOfAtl>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <TargetName>FakeGPS</TargetName>
+    <UseOfAtl>Dynamic</UseOfAtl>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>FakeGPS</TargetName>
+    <UseOfAtl>Dynamic</UseOfAtl>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);_UNICODE;UNICODE</PreprocessorDefinitions>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <WarningLevel>Level4</WarningLevel>
+    </ClCompile>
+    <Midl>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);_UNICODE;UNICODE</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);_UNICODE;UNICODE</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <EntryPointSymbol Condition="'$(Platform)'=='win32'">_DllMainCRTStartup@12</EntryPointSymbol>
+      <EntryPointSymbol Condition="'$(Platform)'!='win32'">_DllMainCRTStartup</EntryPointSymbol>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);_UNICODE;UNICODE</PreprocessorDefinitions>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <WarningLevel>Level4</WarningLevel>
+    </ClCompile>
+    <Midl>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);_UNICODE;UNICODE</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);_UNICODE;UNICODE</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <EntryPointSymbol Condition="'$(Platform)'=='win32'">_DllMainCRTStartup@12</EntryPointSymbol>
+      <EntryPointSymbol Condition="'$(Platform)'!='win32'">_DllMainCRTStartup</EntryPointSymbol>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);_UNICODE;UNICODE</PreprocessorDefinitions>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <WarningLevel>Level4</WarningLevel>
+    </ClCompile>
+    <Midl>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);_UNICODE;UNICODE</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);_UNICODE;UNICODE</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <EntryPointSymbol Condition="'$(Platform)'=='win32'">_DllMainCRTStartup@12</EntryPointSymbol>
+      <EntryPointSymbol Condition="'$(Platform)'!='win32'">_DllMainCRTStartup</EntryPointSymbol>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);_UNICODE;UNICODE</PreprocessorDefinitions>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <WarningLevel>Level4</WarningLevel>
+    </ClCompile>
+    <Midl>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);_UNICODE;UNICODE</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);_UNICODE;UNICODE</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <EntryPointSymbol Condition="'$(Platform)'=='win32'">_DllMainCRTStartup@12</EntryPointSymbol>
+      <EntryPointSymbol Condition="'$(Platform)'!='win32'">_DllMainCRTStartup</EntryPointSymbol>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(SDK_INC_PATH);$(DDK_INC_PATH);$(UMDF_INC_PATH)\10</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(SDK_INC_PATH);$(DDK_INC_PATH);$(UMDF_INC_PATH)\10</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(SDK_INC_PATH);$(DDK_INC_PATH);$(UMDF_INC_PATH)\10</AdditionalIncludeDirectories>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>%(AdditionalDependencies);$(SDK_LIB_PATH)\kernel32.lib;$(SDK_LIB_PATH)\ole32.lib;$(SDK_LIB_PATH)\oleaut32.lib;$(SDK_LIB_PATH)\uuid.lib;$(SDK_LIB_PATH)\user32.lib;$(SDK_LIB_PATH)\advapi32.lib;$(SDK_LIB_PATH)\propsys.lib;$(SDK_LIB_PATH)\PortableDeviceGuids.lib;$(DDK_LIB_PATH)\SensorsClassExtension.lib;$(SDK_LIB_PATH)\setupapi.lib</AdditionalDependencies>
+      <ModuleDefinitionFile>FakeGPS.def</ModuleDefinitionFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(SDK_INC_PATH);$(DDK_INC_PATH);$(UMDF_INC_PATH)\10</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(SDK_INC_PATH);$(DDK_INC_PATH);$(UMDF_INC_PATH)\10;$(INCLUDES)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <WppEnabled>
+      </WppEnabled>
+      <EnablePREfast>true</EnablePREfast>
+    </ClCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(SDK_INC_PATH);$(DDK_INC_PATH);$(UMDF_INC_PATH)\10</AdditionalIncludeDirectories>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>%(AdditionalDependencies);$(SDK_LIB_PATH)\kernel32.lib;$(SDK_LIB_PATH)\ole32.lib;$(SDK_LIB_PATH)\oleaut32.lib;$(SDK_LIB_PATH)\uuid.lib;$(SDK_LIB_PATH)\user32.lib;$(DDK_LIB_PATH)\ntoskrnl.lib;$(SDK_LIB_PATH)\advapi32.lib;$(SDK_LIB_PATH)\propsys.lib;$(SDK_LIB_PATH)\PortableDeviceGuids.lib;$(DDK_LIB_PATH)\SensorsClassExtension.lib;$(SDK_LIB_PATH)\setupapi.lib</AdditionalDependencies>
+      <ModuleDefinitionFile>FakeGPS.def</ModuleDefinitionFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(SDK_INC_PATH);$(DDK_INC_PATH);$(UMDF_INC_PATH)\10</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(SDK_INC_PATH);$(DDK_INC_PATH);$(UMDF_INC_PATH)\10</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(SDK_INC_PATH);$(DDK_INC_PATH);$(UMDF_INC_PATH)\10</AdditionalIncludeDirectories>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>%(AdditionalDependencies);$(SDK_LIB_PATH)\kernel32.lib;$(SDK_LIB_PATH)\ole32.lib;$(SDK_LIB_PATH)\oleaut32.lib;$(SDK_LIB_PATH)\uuid.lib;$(SDK_LIB_PATH)\user32.lib;$(SDK_LIB_PATH)\advapi32.lib;$(SDK_LIB_PATH)\propsys.lib;$(SDK_LIB_PATH)\PortableDeviceGuids.lib;$(DDK_LIB_PATH)\SensorsClassExtension.lib;$(SDK_LIB_PATH)\setupapi.lib</AdditionalDependencies>
+      <ModuleDefinitionFile>FakeGPS.def</ModuleDefinitionFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(SDK_INC_PATH);$(DDK_INC_PATH);$(UMDF_INC_PATH)\10</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(SDK_INC_PATH);$(DDK_INC_PATH);$(UMDF_INC_PATH)\10</AdditionalIncludeDirectories>
+      <IntrinsicFunctions>false</IntrinsicFunctions>
+    </ClCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(SDK_INC_PATH);$(DDK_INC_PATH);$(UMDF_INC_PATH)\10</AdditionalIncludeDirectories>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>%(AdditionalDependencies);$(SDK_LIB_PATH)\kernel32.lib;$(SDK_LIB_PATH)\ole32.lib;$(SDK_LIB_PATH)\oleaut32.lib;$(SDK_LIB_PATH)\uuid.lib;$(SDK_LIB_PATH)\user32.lib;$(SDK_LIB_PATH)\advapi32.lib;$(SDK_LIB_PATH)\propsys.lib;$(SDK_LIB_PATH)\PortableDeviceGuids.lib;$(DDK_LIB_PATH)\SensorsClassExtension.lib;$(SDK_LIB_PATH)\setupapi.lib</AdditionalDependencies>
+      <ModuleDefinitionFile>FakeGPS.def</ModuleDefinitionFile>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Internal.cpp">
+      <AdditionalIncludeDirectories>;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreCompiledHeaderFile>internal.h</PreCompiledHeaderFile>
+      <PreCompiledHeader>Create</PreCompiledHeader>
+      <PreCompiledHeaderOutputFile>$(IntDir)\internal.h.pch</PreCompiledHeaderOutputFile>
+    </ClCompile>
+    <Midl Include="FakeGPSLib.idl" />
+    <ResourceCompile Include="FakeGPS.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Inf Exclude="@(Inf)" Include="*.inf" />
+    <FilesToPackage Include="$(TargetPath)" Condition="'$(ConfigurationType)'=='Driver' or '$(ConfigurationType)'=='DynamicLibrary'" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Exclude="@(None)" Include="*.ico;*.cur;*.bmp;*.dlg;*.rct;*.gif;*.jpg;*.jpeg;*.wav;*.jpe;*.tiff;*.tif;*.png;*.rc2" />
+    <None Exclude="@(None)" Include="*.def;*.bat;*.hpj;*.asmx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FakeGPS.h" />
+    <ClInclude Include="Driver.h" />
+    <ClInclude Include="GeolocationSensor.h" />
+    <ClInclude Include="Internal.h" />
+    <ClInclude Include="Queue.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="Sensor.h" />
+    <ClInclude Include="SensorDDI.h" />
+    <ClInclude Include="SensorManager.h" />
+    <ClInclude Include="Trace.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>

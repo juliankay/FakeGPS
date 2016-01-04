@@ -1,0 +1,31 @@
+/*++
+
+Module:
+
+    SensorsServiceDriver.idl
+
+Description:
+
+    Sensors service driver
+
+--*/
+
+import "wudfddi.idl";
+
+[
+    uuid(cbb555e7-a07a-4fac-a32b-94428ce1c592),
+    version(1.0),
+    helpstring("Fake GPS")
+]
+library FakeGPSLib
+{
+    importlib("stdole2.tlb");
+    [
+        uuid(ceeb6d87-3f96-4cc8-9f46-369939171dc7),
+        helpstring("FakeGPS Class")
+    ]
+    coclass FakeGPS
+    {
+        [default] interface IDriverEntry;
+    };
+};

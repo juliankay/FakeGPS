@@ -1,0 +1,20 @@
+﻿Usage: FakeGPS <command>
+
+FakeGPS -g              get current status
+FakeGPS -s <lat,long>   set latitude and longitude
+
+Example:
+
+PS> FakeGPS -s 51.51786,-0.102216
+The following location has been set in the driver's registry settings:
+Lat:    51.51786
+Long:   -0.102216
+
+PS> FakeGPS -g
+The following location has been got from the Windows location API:
+Lat:    51.51786
+Long:   -0.102216
+
+Note: Once you have set the latitude and longitude you may need to restart the device driver for it take effect. This is due to the Geolocation driver caching the last result and may be fixed in future versions.
+
+Please see https://github.com/juliankay/FakeGPS for updates.

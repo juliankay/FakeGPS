@@ -32,7 +32,7 @@ Note the settings are currently stored in `HKLM\System\CurrentControlSet\Enum\RO
 
 ### Command Line Options
 
-Usage: FakeGPS <command>
+Usage: FakeGPS -command
 
 ```
 FakeGPS -g              get current status

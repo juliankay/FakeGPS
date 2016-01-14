@@ -20,15 +20,40 @@ Note that Test Mode may be incompatible with BitLocker and Secure Boot.
 
 ## Usage
 
+### Driver Installation
+
 * Ensure your system meets the requirements
 * Download the latest release binary as a zip and extract to a folder
 * Install the driver using "Add Legacy Hardware" in Device Manager
 * Confirm you want to install the unsinged driver
     * The driver may say it failed to start on first use, see issue #3
-* Open RegEdit and set the Latitude and Longitude
-    * The default is 1.31337, 1.31337
 
 Note the settings are currently stored in `HKLM\System\CurrentControlSet\Enum\ROOT\UNKNOWN\0000\Device Parameters\FakeGPS` but this will change, see issue #2
+
+### Command Line Options
+
+Usage: FakeGPS -command
+
+```
+FakeGPS -g              get current status
+FakeGPS -s <lat,long>   set latitude and longitude
+```
+
+Example:
+
+```
+PS> FakeGPS -s 51.51786,-0.102216
+The following location has been set in the driver's registry settings:
+Lat:    51.51786
+Long:   -0.102216
+
+PS> FakeGPS -g
+The following location has been got from the Windows location API:
+Lat:    51.51786
+Long:   -0.102216
+```
+
+Note: Once you have set the latitude and longitude you may need to restart the device driver for it take effect. This is due to the Geolocation driver caching the last result and may be fixed in future versions.
 
 ## Questions?
 

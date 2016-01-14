@@ -9,7 +9,7 @@
     using FakeGPS.Common;
 
     /// <summary>
-    /// Console Helper Class
+    /// Console Helper Class.
     /// </summary>
     public static class ConsoleHelper
     {
@@ -18,58 +18,31 @@
         /// </summary>
         private static readonly Assembly Assembly = Assembly.GetExecutingAssembly();
 
+        /// <summary>
+        /// Write the <see cref="LatLong"/> to the Console.
+        /// </summary>
+        /// <param name="latLong">The <see cref="LatLong"/>.</param>
         public static void WriteLatLong(LatLong latLong)
         {
+            if (latLong == null)
+            {
+                throw new ArgumentNullException(nameof(latLong));
+            }
+
             Console.WriteLine("Lat:\t{0}", latLong.Latitude);
             Console.WriteLine("Long:\t{0}", latLong.Longitude);
         }
 
         /// <summary>
-        /// Read Line
-        /// </summary>
-        /// <returns>The Line</returns>
-        public static string ReadLine()
-        {
-            return Console.ReadLine();
-        }
-
-        /// <summary>
-        /// Write Line
-        /// </summary>
-        public static void WriteLine()
-        {
-            Console.WriteLine();
-        }
-
-        /// <summary>
-        /// Write Line
-        /// </summary>
-        /// <param name="value">The Line</param>
-        public static void WriteLine(string value)
-        {
-            Console.WriteLine(value);
-        }
-
-        /// <summary>
-        /// Write Line
-        /// </summary>
-        /// <param name="format">Format</param>
-        /// <param name="arg">Arguments</param>
-        public static void WriteLine(string format, params object[] arg)
-        {
-            Console.WriteLine(format, arg);
-        }
-
-        /// <summary>
-        /// Write the Header to the Console
+        /// Write the Header to the Console.
         /// </summary>
         public static void WriteHeader()
         {
-            Console.WriteLine("FakeGPS CLI version 1.0.0");
+            Console.WriteLine($"FakeGPS CLI, Version {Assembly.GetName().Version}");
         }
 
         /// <summary>
-        /// Write attach debugger message to the Console
+        /// Write attach debugger message to the Console.
         /// </summary>
         /// <remarks>
         /// DEBUG only. Message shown if debugger is not attached.
@@ -89,7 +62,7 @@
         }
 
         /// <summary>
-        /// Write exit message to the Console
+        /// Write exit message to the Console.
         /// </summary>
         /// <remarks>
         /// DEBUG only. Message shown if debugger is attached.
@@ -109,12 +82,13 @@
         }
 
         /// <summary>
-        /// Write an Error to the Console in Red then change the color back
+        /// Write an Error to the Console in Red then change the color back.
         /// </summary>
         /// <param name="message">The error message</param>
         public static void WriteError(string message)
         {
             var color = Console.ForegroundColor;
+
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("ZOMG, we got this error:");
             Console.WriteLine(message);
@@ -123,11 +97,12 @@
         }
 
         /// <summary>
-        /// Write the Help file to the Console
+        /// Write the Help file to the Console.
         /// </summary>
         public static void WriteHelp()
         {
             var help = ReadHelpResource();
+
             foreach (var line in help)
             {
                 Console.WriteLine(line);
@@ -135,9 +110,9 @@
         }
 
         /// <summary>
-        /// Read the Help File
+        /// Read the Help File.
         /// </summary>
-        /// <returns>Each line of the help file</returns>
+        /// <returns>Each line of the help file.</returns>
         private static IEnumerable<string> ReadHelpResource()
         {
             var stream = Assembly.GetManifestResourceStream("FakeGPS.Resources.Help.txt");

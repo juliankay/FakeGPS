@@ -18,6 +18,7 @@
         /// <param name="args">The Command Line Arguments.</param>
         public static void Main(string[] args)
         {
+            // not keen on the format of --help so let's do our own here
             if (args == null || args.Length == 0)
             {
                 ConsoleHelper.WriteHeader();

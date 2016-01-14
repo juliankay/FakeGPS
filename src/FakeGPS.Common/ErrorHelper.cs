@@ -6,12 +6,12 @@
     using System.IO;
 
     /// <summary>
-    /// Error Helper Class
+    /// Error Helper Class.
     /// </summary>
     public static class ErrorHelper
     {
         /// <summary>
-        /// Invalid Arguments
+        /// Invalid Arguments.
         /// </summary>
         /// <param name="format">The message</param>
         /// <param name="args">The format arguments</param>

@@ -36,7 +36,7 @@
                     Debugger.Break();
                 }
 
-                // just rethrow for now
+                // just re-throw for now
                 // potentially catch specific exceptions for better handling
                 throw ex;
             }

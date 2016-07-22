@@ -25,7 +25,7 @@ Note that Test Mode may be incompatible with BitLocker and Secure Boot.
 * Ensure your system meets the requirements
 * Download the latest release binary as a zip and extract to a folder
 * Install the driver using "Add Legacy Hardware" in Device Manager
-* Confirm you want to install the unsinged driver
+* Confirm you want to install the unsigned driver
     * The driver may say it failed to start on first use, see issue #3
 
 Note the settings are currently stored in `HKLM\System\CurrentControlSet\Enum\ROOT\UNKNOWN\0000\Device Parameters\FakeGPS` but this will change, see issue #2

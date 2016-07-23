@@ -1,9 +1,9 @@
 ﻿namespace FakeGPS.Common
 {
     using System;
-    using System.Text.RegularExpressions;
-
     using System.Device.Location;
+    using System.Globalization;
+    using System.Text.RegularExpressions;
     using System.Threading;
 
     /// <summary>
@@ -55,8 +55,8 @@
 
                 return new LatLong()
                 {
-                    Latitude = Convert.ToDouble(splits[0]),
-                    Longitude = Convert.ToDouble(splits[1])
+                    Latitude = Convert.ToDouble(splits[0], CultureInfo.InvariantCulture),
+                    Longitude = Convert.ToDouble(splits[1], CultureInfo.InvariantCulture)
                 };
             }
             catch (Exception ex)

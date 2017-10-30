@@ -2,6 +2,8 @@
 
 FakeGPS is a Windows driver which allows the user to provide geolocation information without a physical GPS device.
 
+**Note: in order to use FakeGPS please download [the released binary](https://github.com/juliankay/FakeGPS/releases), not the source code.**
+
 ## Why?
 Windows 10 includes Cortana, a digital assistant which can help you with location based reminders.
 When there is no GPS device the location services in Windows will try to guess where you are geographically using other means like Wi-Fi or IP address.
@@ -13,7 +15,7 @@ For more information on why you might want this see [Using Cortana with a Fake G
 
 ## Requirements
 
-1. Windows 8 and up (only tested on Windows 10 x64)
+1. Windows 10 x64
 2. Test Mode Enabled (`bcdedit /set testsigning on`)
 
 Note that Test Mode may be incompatible with BitLocker and Secure Boot.
@@ -23,7 +25,7 @@ Note that Test Mode may be incompatible with BitLocker and Secure Boot.
 ### Driver Installation
 
 * Ensure your system meets the requirements
-* Download the latest release binary as a zip and extract to a folder
+* [Download the latest version of the released binary](https://github.com/juliankay/FakeGPS/releases) as a zip and extract to a folder
 * Install the driver using "Add Legacy Hardware" in Device Manager
 * Confirm you want to install the unsigned driver
     * The driver may say it failed to start on first use, see issue #3

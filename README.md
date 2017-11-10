@@ -24,7 +24,7 @@ Note that Test Mode may be incompatible with BitLocker and Secure Boot.
 
 ### Driver Installation
 
-* Ensure your system meets the requirements
+* Ensure your system meets the requirements (**Test Mode must be enabled**)
 * [Download the latest version of the released binary](https://github.com/juliankay/FakeGPS/releases) as a zip and extract to a folder
 * Install the driver using "Add Legacy Hardware" in Device Manager
 * Confirm you want to install the unsigned driver

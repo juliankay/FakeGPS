@@ -1,5 +1,7 @@
 # FakeGPS
 
+**Note: this driver is NOT maintained by the author at this time**
+
 FakeGPS is a Windows driver which allows the user to provide geolocation information without a physical GPS device.
 
 **Note: in order to use FakeGPS please download [the released binary](https://github.com/juliankay/FakeGPS/releases), not the source code.**
@@ -60,3 +62,5 @@ Note: Once you have set the latitude and longitude you may need to restart the d
 ## Questions?
 
 You can contact [@juliankay](https://twitter.com/juliankay) on Twitter, or open issues in this repository.
+
+Please note that I no longer use this tool, and at the time of this update I have not touched the code in about three years, so while you're free to create issues - I'm not going to be fixing them. :)

@@ -61,6 +61,4 @@ Note: Once you have set the latitude and longitude you may need to restart the d
 
 ## Questions?
 
-You can contact [@juliankay](https://twitter.com/juliankay) on Twitter, or open issues in this repository.
-
-Please note that I no longer use this tool, and at the time of this update I have not touched the code in about three years, so while you're free to create issues - I'm not going to be fixing them. :)
+Please note that I no longer use this tool, and at the time of this update I have not touched the code in about three years, so while you're free to create issues - I'm not going to be fixing them. ✌️
